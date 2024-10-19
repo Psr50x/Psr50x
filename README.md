@@ -1,5 +1,5 @@
 # 💫 About Me:
-🧑‍💻aspiring data analyst from @IITM<br>🎯passionate about converting data into insights and building frameworks for decision-making<br>🌱i'm currently learning data science, machine learning and python <br>
+🧑‍💻aspiring data analyst and data science from @IITM(minor in Data science & meachine learning)<br>🎯passionate about converting data into insights and building frameworks for decision-making<br>🌱i'm currently learning data science, machine learning and python <br>
 
 
 ## 🌐 Socials:
