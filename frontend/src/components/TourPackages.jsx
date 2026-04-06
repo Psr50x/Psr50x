@@ -81,7 +81,11 @@ const TourPackages = () => {
                         <Clock className="h-4 w-4 mr-2" />
                         <span className="text-sm font-semibold">{tour.duration}</span>
                       </div>
-                      <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                      <p 
+                        className="text-gray-600 leading-relaxed mb-4 line-clamp-3 cursor-pointer hover:text-gray-900 transition-colors"
+                        onClick={() => window.location.href = `tel:${contactInfo.phone}`}
+                        title="Click to call"
+                      >
                         {tour.description}
                       </p>
                       <button 

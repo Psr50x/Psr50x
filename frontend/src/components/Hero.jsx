@@ -9,11 +9,23 @@ const Hero = () => {
   const [experience, setExperience] = useState('');
 
   const handleSearch = () => {
-    // For now, scroll to tour packages section
-    const toursSection = document.getElementById('tour-packages');
-    if (toursSection) {
-      toursSection.scrollIntoView({ behavior: 'smooth' });
+    // Create WhatsApp message with selected filters
+    let message = 'Hello! I am interested in booking a Rajasthan tour.\\n\\n';
+    
+    if (duration) {
+      message += `Duration: ${duration} days\\n`;
     }
+    if (experience) {
+      message += `Experience Type: ${experience}\\n`;
+    }
+    
+    message += '\\nPlease provide more details about available packages.';
+    
+    // Open WhatsApp with the message
+    window.open(
+      `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(message)}`,
+      '_blank'
+    );
   };
   return (
     <div className="relative h-screen">
@@ -93,7 +105,7 @@ const Hero = () => {
                 onClick={handleSearch}
                 className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:shadow-lg"
               >
-                SEARCH
+                INQUIRY ON WHATSAPP
               </button>
             </div>
           </div>
