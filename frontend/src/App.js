@@ -12,6 +12,8 @@ import WhyUs from './components/WhyUs';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import PackageDetail from './pages/PackageDetail';
+import ContactPage from './pages/ContactPage';
 
 const Home = () => {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/package/:id" element={<PackageDetail />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
         <FloatingWhatsApp />

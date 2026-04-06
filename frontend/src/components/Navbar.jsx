@@ -34,7 +34,7 @@ const Navbar = () => {
             <Link to="/" className="text-white hover:text-amber-500 transition-colors font-medium">
               REVIEWS
             </Link>
-            <Link to="/" className="text-white hover:text-amber-500 transition-colors font-medium">
+            <Link to="/contact" className="text-white hover:text-amber-500 transition-colors font-medium">
               CONTACT
             </Link>
             <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-lg">

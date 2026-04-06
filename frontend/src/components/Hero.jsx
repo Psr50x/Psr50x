@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, MessageCircle } from 'lucide-react';
 import { contactInfo } from '../data/mockData';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const [duration, setDuration] = useState('');
+  const [experience, setExperience] = useState('');
+
+  const handleSearch = () => {
+    // For now, scroll to tour packages section
+    const toursSection = document.getElementById('tour-packages');
+    if (toursSection) {
+      toursSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="relative h-screen">
       {/* Background Image */}
@@ -53,23 +65,34 @@ const Hero = () => {
           <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl p-4 md:p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="relative">
-                <select className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
-                  <option>Duration</option>
-                  <option>1-7 Days</option>
-                  <option>8-15 Days</option>
-                  <option>16+ Days</option>
+                <select 
+                  value={duration}
+                  onChange={(e) => setDuration(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="">Duration</option>
+                  <option value="1-7">1-7 Days</option>
+                  <option value="8-15">8-15 Days</option>
+                  <option value="16+">16+ Days</option>
                 </select>
               </div>
               <div className="relative">
-                <select className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
-                  <option>Experiences</option>
-                  <option>Heritage & Culture</option>
-                  <option>Desert Safari</option>
-                  <option>Spiritual</option>
-                  <option>Adventure</option>
+                <select 
+                  value={experience}
+                  onChange={(e) => setExperience(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="">Experiences</option>
+                  <option value="heritage">Heritage & Culture</option>
+                  <option value="desert">Desert Safari</option>
+                  <option value="spiritual">Spiritual</option>
+                  <option value="adventure">Adventure</option>
                 </select>
               </div>
-              <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:shadow-lg">
+              <button 
+                onClick={handleSearch}
+                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:shadow-lg"
+              >
                 SEARCH
               </button>
             </div>
