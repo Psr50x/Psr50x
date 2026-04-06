@@ -8,6 +8,27 @@ const Hero = () => {
   const [duration, setDuration] = useState('');
   const [experience, setExperience] = useState('');
 
+  const scrollToPackages = () => {
+    const section = document.getElementById('tour-packages');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleDurationChange = (e) => {
+    setDuration(e.target.value);
+    if (e.target.value) {
+      scrollToPackages();
+    }
+  };
+
+  const handleExperienceChange = (e) => {
+    setExperience(e.target.value);
+    if (e.target.value) {
+      scrollToPackages();
+    }
+  };
+
   const handleSearch = () => {
     // Create WhatsApp message with selected filters
     let message = 'Hello! I am interested in booking a Rajasthan tour.\\n\\n';
@@ -79,7 +100,7 @@ const Hero = () => {
               <div className="relative">
                 <select 
                   value={duration}
-                  onChange={(e) => setDuration(e.target.value)}
+                  onChange={handleDurationChange}
                   className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   <option value="">Duration</option>
@@ -91,7 +112,7 @@ const Hero = () => {
               <div className="relative">
                 <select 
                   value={experience}
-                  onChange={(e) => setExperience(e.target.value)}
+                  onChange={handleExperienceChange}
                   className="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   <option value="">Experiences</option>

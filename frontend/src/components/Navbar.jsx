@@ -1,9 +1,38 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { contactInfo } from '../data/mockData';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (sectionId) => {
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
+
+  const handlePlanTrip = () => {
+    window.open(
+      `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent('Hello! I would like to plan a Rajasthan tour. Please help me with the details.')}`,
+      '_blank'
+    );
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm shadow-lg">
@@ -21,23 +50,31 @@ const Navbar = () => {
             <Link to="/" className="text-white hover:text-amber-500 transition-colors font-medium">
               HOME
             </Link>
-            <div className="relative group">
-              <button className="text-white hover:text-amber-500 transition-colors font-medium flex items-center">
-                DESTINATIONS <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-            </div>
-            <div className="relative group">
-              <button className="text-white hover:text-amber-500 transition-colors font-medium flex items-center">
-                TOURS <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-            </div>
-            <Link to="/" className="text-white hover:text-amber-500 transition-colors font-medium">
+            <button 
+              onClick={() => scrollToSection('tour-packages')}
+              className="text-white hover:text-amber-500 transition-colors font-medium"
+            >
+              DESTINATIONS
+            </button>
+            <button 
+              onClick={() => scrollToSection('tour-packages')}
+              className="text-white hover:text-amber-500 transition-colors font-medium"
+            >
+              TOURS
+            </button>
+            <button 
+              onClick={() => scrollToSection('testimonials')}
+              className="text-white hover:text-amber-500 transition-colors font-medium"
+            >
               REVIEWS
-            </Link>
+            </button>
             <Link to="/contact" className="text-white hover:text-amber-500 transition-colors font-medium">
               CONTACT
             </Link>
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-lg">
+            <button 
+              onClick={handlePlanTrip}
+              className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-lg"
+            >
               PLAN YOUR TRIP
             </button>
           </div>
@@ -58,22 +95,34 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-slate-800">
           <div className="px-4 pt-2 pb-4 space-y-3">
-            <Link to="/" className="block text-white hover:text-amber-500 transition-colors py-2">
+            <Link to="/" className="block text-white hover:text-amber-500 transition-colors py-2" onClick={() => setIsOpen(false)}>
               HOME
             </Link>
-            <Link to="/" className="block text-white hover:text-amber-500 transition-colors py-2">
+            <button 
+              onClick={() => scrollToSection('tour-packages')}
+              className="block w-full text-left text-white hover:text-amber-500 transition-colors py-2"
+            >
               DESTINATIONS
-            </Link>
-            <Link to="/" className="block text-white hover:text-amber-500 transition-colors py-2">
+            </button>
+            <button 
+              onClick={() => scrollToSection('tour-packages')}
+              className="block w-full text-left text-white hover:text-amber-500 transition-colors py-2"
+            >
               TOURS
-            </Link>
-            <Link to="/" className="block text-white hover:text-amber-500 transition-colors py-2">
+            </button>
+            <button 
+              onClick={() => scrollToSection('testimonials')}
+              className="block w-full text-left text-white hover:text-amber-500 transition-colors py-2"
+            >
               REVIEWS
-            </Link>
-            <Link to="/" className="block text-white hover:text-amber-500 transition-colors py-2">
+            </button>
+            <Link to="/contact" className="block text-white hover:text-amber-500 transition-colors py-2" onClick={() => setIsOpen(false)}>
               CONTACT
             </Link>
-            <button className="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-medium transition-colors mt-2">
+            <button 
+              onClick={() => { handlePlanTrip(); setIsOpen(false); }}
+              className="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-medium transition-colors mt-2"
+            >
               PLAN YOUR TRIP
             </button>
           </div>

@@ -20,7 +20,7 @@ const Testimonials = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+    <section id="testimonials" className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
