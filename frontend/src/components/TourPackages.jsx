@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { tourPackages } from '../data/mockData';
-import { ChevronLeft, ChevronRight, Clock } from 'lucide-react';
+import { tourPackages, contactInfo } from '../data/mockData';
+import { ChevronLeft, ChevronRight, Clock, Phone, MessageCircle } from 'lucide-react';
 
 const TourPackages = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -77,9 +77,24 @@ const TourPackages = () => {
                       <p className="text-gray-600 leading-relaxed mb-4">
                         {tour.description}
                       </p>
-                      <button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-md font-semibold transition-all duration-300 hover:shadow-lg">
-                        Book Now
-                      </button>
+                      <div className="flex gap-2">
+                        <a 
+                          href={`tel:${contactInfo.phone}`}
+                          className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
+                        >
+                          <Phone className="h-4 w-4" />
+                          Call Now
+                        </a>
+                        <a 
+                          href={`https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(contactInfo.whatsappMessage + ' - ' + tour.title)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-md font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          WhatsApp
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

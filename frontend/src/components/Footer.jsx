@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { contactInfo } from '../data/mockData';
 
 const Footer = () => {
   return (
@@ -107,15 +108,19 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-start text-gray-400">
                   <MapPin className="h-5 w-5 mr-2 mt-1 flex-shrink-0" />
-                  <span>Jaipur, Rajasthan, India</span>
+                  <span>{contactInfo.address}</span>
                 </li>
                 <li className="flex items-center text-gray-400">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
-                  <span>+91 12345 67890</span>
+                  <a href={`tel:${contactInfo.phone}`} className="hover:text-amber-400 transition-colors">
+                    {contactInfo.phone}
+                  </a>
                 </li>
                 <li className="flex items-center text-gray-400">
                   <Mail className="h-5 w-5 mr-2 flex-shrink-0" />
-                  <span>info@rajasthantripplanner.com</span>
+                  <a href={`mailto:${contactInfo.email}`} className="hover:text-amber-400 transition-colors">
+                    {contactInfo.email}
+                  </a>
                 </li>
               </ul>
             </div>

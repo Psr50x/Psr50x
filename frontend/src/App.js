@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials';
 import WhyUs from './components/WhyUs';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const Home = () => {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
+        <FloatingWhatsApp />
       </BrowserRouter>
     </div>
   );

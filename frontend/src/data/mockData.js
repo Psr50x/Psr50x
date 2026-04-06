@@ -66,7 +66,7 @@ export const tourPackages = [
     duration: '6 Days',
     image: 'https://images.unsplash.com/photo-1601571574713-349e4e867fa6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwzfHxSYWphc3RoYW4lMjBwYWxhY2V8ZW58MHx8fHwxNzc1NDAxNzE0fDA&ixlib=rb-4.1.0&q=85',
     description: 'Explore Delhi, Agra, and Jaipur - the most famous cultural triangle of India with iconic monuments.',
-    price: '$499'
+    price: '₹35,999'
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ export const tourPackages = [
     duration: '10 Days',
     image: 'https://images.unsplash.com/photo-1670254812851-e59013163aee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHw0fHxSYWphc3RoYW4lMjBwYWxhY2V8ZW58MHx8fHwxNzc1NDAxNzE0fDA&ixlib=rb-4.1.0&q=85',
     description: 'A journey through Rajasthan\'s majestic palaces, epic forts, and colorful culture across Jaipur, Jodhpur, Udaipur.',
-    price: '$899'
+    price: '₹64,999'
   },
   {
     id: 3,
@@ -82,7 +82,7 @@ export const tourPackages = [
     duration: '7 Days',
     image: 'https://images.unsplash.com/photo-1717329162563-2f93e83cc717?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxSYWphc3RoYW4lMjBmb3J0fGVufDB8fHx8MTc3NTQwMTcxOHww&ixlib=rb-4.1.0&q=85',
     description: 'Experience the golden deserts of Jaisalmer with camel safari, sand dunes, and desert camping.',
-    price: '$649'
+    price: '₹46,999'
   },
   {
     id: 4,
@@ -90,7 +90,7 @@ export const tourPackages = [
     duration: '8 Days',
     image: 'https://images.unsplash.com/photo-1643892151782-baa8dcea97c9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwyfHx0b3VyaXNtJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc3NTQwMTcyOXww&ixlib=rb-4.1.0&q=85',
     description: 'Visit sacred temples, holy lakes of Pushkar, and experience spiritual Rajasthan with ancient rituals.',
-    price: '$599'
+    price: '₹43,999'
   },
   {
     id: 5,
@@ -98,7 +98,7 @@ export const tourPackages = [
     duration: '12 Days',
     image: 'https://images.unsplash.com/photo-1643892151836-07fe5562d0f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwzfHx0b3VyaXNtJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc3NTQwMTcyOXww&ixlib=rb-4.1.0&q=85',
     description: 'A comprehensive tour of Rajasthan\'s legendary forts and palaces including Mehrangarh, Amber Fort, and more.',
-    price: '$999'
+    price: '₹72,999'
   },
   {
     id: 6,
@@ -106,7 +106,7 @@ export const tourPackages = [
     duration: '9 Days',
     image: 'https://images.unsplash.com/photo-1683669446872-f956fe268beb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHx0b3VyaXNtJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc3NTQwMTcyOXww&ixlib=rb-4.1.0&q=85',
     description: 'Discover Udaipur\'s romantic lakes, Mount Abu\'s serene beauty, and rich cultural heritage.',
-    price: '$749'
+    price: '₹54,999'
   }
 ];
 
@@ -247,3 +247,13 @@ export const regions = [
     image: 'https://images.pexels.com/photos/570031/pexels-photo-570031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
   }
 ];
+
+
+export const contactInfo = {
+  phone: '+91 92511 10777',
+  address: '22, Chandravihar Colony, Vaishali Nagar, Jaipur, Rajasthan',
+  email: 'info@rajasthantripplanner.com',
+  whatsappNumber: '919251110777', // without + and spaces for WhatsApp link
+  whatsappMessage: 'Hello! I am interested in booking a Rajasthan tour. Please provide more details.'
+};
+

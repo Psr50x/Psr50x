@@ -1,4 +1,6 @@
 import React from 'react';
+import { Phone, MessageCircle } from 'lucide-react';
+import { contactInfo } from '../data/mockData';
 
 const Hero = () => {
   return (
@@ -26,9 +28,24 @@ const Hero = () => {
           <p className="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Discover the Royal Heritage of Rajasthan, Delhi & Agra with our Luxury Travel Experiences
           </p>
-          <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            EXPLORE TOURS
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <a 
+              href={`tel:${contactInfo.phone}`}
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2"
+            >
+              <Phone className="h-5 w-5" />
+              Call for Enquiry
+            </a>
+            <a 
+              href={`https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(contactInfo.whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="h-5 w-5" />
+              WhatsApp Enquiry
+            </a>
+          </div>
         </div>
 
         {/* Search Bar */}

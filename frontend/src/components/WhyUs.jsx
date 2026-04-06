@@ -1,6 +1,6 @@
 import React from 'react';
-import { whyUsFeatures } from '../data/mockData';
-import { Settings, Award, Users, Shield } from 'lucide-react';
+import { whyUsFeatures, contactInfo } from '../data/mockData';
+import { Settings, Award, Users, Shield, Phone, MessageCircle } from 'lucide-react';
 
 const iconMap = {
   Settings: Settings,
@@ -51,9 +51,24 @@ const WhyUs = () => {
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Plan Your Bespoke Journey with Us. Fill in your details and one of our destination experts will get in touch with you.
           </p>
-          <button className="bg-white hover:bg-gray-100 text-amber-600 px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-lg">
-            Customize Your Trip
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href={`tel:${contactInfo.phone}`}
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
+            >
+              <Phone className="h-5 w-5" />
+              Call {contactInfo.phone}
+            </a>
+            <a 
+              href={`https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(contactInfo.whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white hover:bg-gray-100 text-amber-600 px-8 py-4 rounded-md text-lg font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="h-5 w-5" />
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </div>
     </section>
