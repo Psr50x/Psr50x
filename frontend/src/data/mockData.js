@@ -252,7 +252,7 @@ export const regions = [
 export const contactInfo = {
   phone: '+91 92511 10777',
   address: '22, Chandravihar Colony, Vaishali Nagar, Jaipur, Rajasthan',
-  email: 'info@rajasthantripplanner.com',
+  email: 'info@rajasthantripplan.com',
   whatsappNumber: '919251110777', // without + and spaces for WhatsApp link
   whatsappMessage: 'Hello! I am interested in booking a Rajasthan tour. Please provide more details.'
 };

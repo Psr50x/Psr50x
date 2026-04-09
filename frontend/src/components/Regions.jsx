@@ -10,7 +10,7 @@ const Regions = () => {
             Introducing Rajasthan
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore Rajasthan with RajasthanTripPlanner
+            Explore Rajasthan with RajasthanTripPlan
           </p>
           <div className="w-24 h-1 bg-amber-600 mx-auto mt-4"></div>
         </div>

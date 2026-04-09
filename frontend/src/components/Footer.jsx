@@ -39,7 +39,7 @@ const Footer = () => {
             {/* About */}
             <div>
               <h3 className="text-2xl font-serif text-amber-400 mb-4">
-                RajasthanTripPlanner
+                RajasthanTripPlan
               </h3>
               <p className="text-gray-400 leading-relaxed mb-4">
                 Your premier luxury travel agency specializing in Rajasthan tours. 
@@ -133,7 +133,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 RajasthanTripPlanner. All rights reserved.
+              © 2025 RajasthanTripPlan. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/" className="text-gray-400 hover:text-amber-400 transition-colors">

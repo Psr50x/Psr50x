@@ -41,7 +41,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="text-2xl font-serif text-amber-500">
-              Rajasthan<span className="text-white">TripPlanner</span>
+              Rajasthan<span className="text-white">TripPlan</span>
             </div>
           </Link>
 
