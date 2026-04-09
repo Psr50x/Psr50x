@@ -58,7 +58,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "verify-build": "ls -la build/ && echo '\n✓ Checking for _redirects file:' && cat build/_redirects 2>/dev/null || echo '❌ _redirects file missing! Check public/_redirects'"
   },
   "browserslist": {
     "production": [

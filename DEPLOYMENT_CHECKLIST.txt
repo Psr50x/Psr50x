@@ -1,0 +1,107 @@
+═══════════════════════════════════════════════════════════════
+   NETLIFY DEPLOYMENT CHECKLIST - Rajasthan Trip Plan
+═══════════════════════════════════════════════════════════════
+
+📋 BEFORE YOU START:
+   ✓ Extract the downloaded zip file
+   ✓ Install Node.js from https://nodejs.org (v16+)
+
+───────────────────────────────────────────────────────────────
+STEP 1: NAVIGATE TO FRONTEND FOLDER
+───────────────────────────────────────────────────────────────
+
+Open Terminal/Command Prompt and run:
+
+   cd path/to/project/frontend
+
+   (Replace "path/to/project" with your actual path)
+
+───────────────────────────────────────────────────────────────
+STEP 2: INSTALL DEPENDENCIES
+───────────────────────────────────────────────────────────────
+
+Run these commands:
+
+   npm install -g yarn
+   yarn install
+
+   ⏱️  This takes 2-5 minutes. Wait for it to complete!
+
+───────────────────────────────────────────────────────────────
+STEP 3: BUILD THE PROJECT
+───────────────────────────────────────────────────────────────
+
+   yarn build
+
+   ⏱️  This takes 1-2 minutes.
+   ✓ Creates a 'build' folder inside 'frontend'
+
+───────────────────────────────────────────────────────────────
+STEP 4: VERIFY BUILD FOLDER
+───────────────────────────────────────────────────────────────
+
+Check that these files exist in frontend/build/:
+
+   ✓ index.html
+   ✓ _redirects  ← IMPORTANT! This fixes 404 errors
+   ✓ static/ folder
+
+───────────────────────────────────────────────────────────────
+STEP 5: DEPLOY TO NETLIFY
+───────────────────────────────────────────────────────────────
+
+Option 1 - Easiest (Drag & Drop):
+   1. Go to: https://app.netlify.com/drop
+   2. Drag the 'build' folder (just the build folder!)
+   3. Drop it on the page
+   4. Done! ✨
+
+Option 2 - Dashboard:
+   1. Go to: https://app.netlify.com
+   2. Click "Add new site" → "Deploy manually"
+   3. Drag the 'build' folder
+   4. Done! ✨
+
+───────────────────────────────────────────────────────────────
+STEP 6: TEST YOUR DEPLOYMENT
+───────────────────────────────────────────────────────────────
+
+After deployment, test these URLs:
+
+   ✓ https://your-site.netlify.app/
+   ✓ https://your-site.netlify.app/package/1
+   ✓ https://your-site.netlify.app/contact
+
+   All should work without 404 errors!
+
+═══════════════════════════════════════════════════════════════
+   TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+❌ Still getting 404 errors?
+
+   1. Check if build/_redirects file exists
+   2. If missing, check if public/_redirects exists
+   3. Rebuild: yarn build
+   4. Redeploy the build folder
+
+❌ Blank white page?
+
+   Make sure you deployed the BUILD folder, not:
+   • The frontend folder ❌
+   • The entire project folder ❌
+   • Only the build folder ✅
+
+❌ Build failed?
+
+   1. Delete node_modules folder
+   2. Run: yarn install
+   3. Run: yarn build
+
+═══════════════════════════════════════════════════════════════
+
+📖 For detailed instructions, see: MANUAL_DEPLOYMENT_GUIDE.md
+
+🎉 Your site will be live at: https://your-site-name.netlify.app
+
+═══════════════════════════════════════════════════════════════
